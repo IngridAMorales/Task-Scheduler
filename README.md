@@ -2,8 +2,9 @@
  > Prompt text is any lines beginning with "\>"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
 # Task Scheduler
+ > Your author list below should include links to all members GitHub (remove existing author).
  
- > Authors: Viviane Fernando (https://github.com/nwarn003) Ingrid Morales (https://github.com/IngridAMorales)
+ > Authors: Viviane Fernando (https://github.com/nwarn003)
  
  > You will be forming a group of **FOUR** students and working on an interesting project. The project has 4 phases, each one with specific requirements. A list of proposed project ideas that have been successful in previous quarters is listed in the project specifications document on Canvas. You can select an idea from the list, start thinking about the features you will implement, what design patterns can help you implement them, and why. If you want to propose your own original idea, you will have to contact an instructor to discuss the project and obtain written permission before you submit your project proposal (Phase 1). Your project needs to implement at least two design patterns iteratively, which you will have to justify for later phases.The project work should be divided almost equally among team members and each member is expected to work on at least one design pattern (more than one partner may work on a pattern) and some of its test cases. You can of course help each other, but it needs to be clear who will be responsible for which patterns and for which features. Additionally, you are expected to follow Scrum patterns, specifically the use of a Scrum (Project) board, Sprints, and Scrum meetings. While Daily Scrums are not required we highly recommend you practice them too.
  
@@ -18,6 +19,9 @@
 > * All project phases are to be submitted to this GitHub repository. You should modify this README file to reflect the different phases of the project. In addition, you should regularly hold sprint meetings with your group. You will need to hold one check-in meeting with your lab TA in addition to the final demo.
 
 ## Project Description
+As we are all college students, productivity and time management is an important skill to have as a student so that we can stay on top of all our tasks. Making an application that keeps track of our assignments along with their due dates, will make sure we exceed in our classes.
+We will be using C++, HTML/CSS, Bootstrap, React, Git and Github and UI applications such as Typeform.
+Input would be the task title, description and other classifications. The output would be that you would see the task list and it would be sorted depending on urgency of the task. Some features would be providing a calender to see all the tasks,  filter task depending on urgency, creating an account, having a homepage, ability to make custom lists.
  > Your project description should summarize the project you are proposing. Be sure to include:
  > * Why is it important or interesting to you?
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
