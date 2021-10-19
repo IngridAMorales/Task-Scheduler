@@ -18,7 +18,7 @@
 > * All project phases are to be submitted to this GitHub repository. You should modify this README file to reflect the different phases of the project. In addition, you should regularly hold sprint meetings with your group. You will need to hold one check-in meeting with your lab TA in addition to the final demo.
 
 ## Project Description
-As we are all college students, productivity and time management is an important skill to have as a student so that we can stay on top of all our tasks. Making an application that keeps track of our assignments along with their due dates, will make sure we exceed in our classes.
+As we are all college students, productivity and time management are important skills to have as a student so that we can stay on top of all our tasks. Making an application that keeps track of our assignments along with their due dates, will make sure we succeed in our all out classes.
 We will be using C++, HTML/CSS, Bootstrap, React, Git and Github and UI applications such as Typeform.
 Input would be the task title, description and other classifications. The output would be that you would see the task list and it would be sorted depending on urgency of the task. Some features would be providing a calender to see all the tasks,  filter task depending on urgency, creating an account, having a homepage, ability to make custom lists.
  > Your project description should summarize the project you are proposing. Be sure to include:
