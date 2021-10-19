@@ -2,7 +2,6 @@
  > Prompt text is any lines beginning with "\>"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
 # Task Scheduler
- > Your author list below should include links to all members GitHub (remove existing author).
  
  > Authors: Viviane Fernando (https://github.com/nwarn003) Ingrid Morales (https://github.com/IngridAMorales)
  
