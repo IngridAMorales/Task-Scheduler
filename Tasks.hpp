@@ -1,10 +1,13 @@
 #ifndef __TASKS_HPP__
 #define __TASKS_HPP__
+#include "Tasklist.hpp" 
 
 class Tasks: public Tasklist {
 private: 
-    std::vector<TaskList*> s;	//vector will implement the stack
-    std::stack<TaskList*, std::vector<TaskList*> >t; 	//stack holds the Tasks  
+    std::vector<Tasklist*> subtasks;	//holds the tasks
+
+    std::vector<Tasklist*> u; //implements the undo stack 
+    std::stack<TaskList*, std::vector<Tasklist*>> undo;  //holds the actions of the user to undo any operation 
     
 public: 
     Tasks(Tasklist* sub, std::string title, std::string descrip): Tasklist(title, descrip) {} 
