@@ -9,12 +9,7 @@ We will be using C++, HTML/CSS, Bootstrap, React, Git and Github and UI applicat
 Input would be the task title, description and other classifications. The output would be that you would see the task list and it would be sorted depending on urgency of the task. Some features would be providing a calender to see all the tasks,  filter task depending on urgency, creating an account, having a homepage, ability to make custom lists.
 
 
- > ## Phase II
- > In addition to completing the "Class Diagram" section below, you will need to:
- > * Create an "Epic" (note) for each feature and each design pattern and assign them to the appropriate team member. Place these in the `Backlog` column
- > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
- >   * Create smaller actionable development tasks as issues and assign them to team members. Place these in the `TODO` column.
- >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
+ 
 ## Class Diagram
 ![Final Project](https://user-images.githubusercontent.com/68444503/140805599-90fb035c-b53d-41a1-b700-8ffae4eac7fb.jpeg)
 
