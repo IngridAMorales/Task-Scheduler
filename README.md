@@ -15,7 +15,7 @@ Input would be the task title, description and other classifications. The output
 
  
  ## Design Patterns
- We will be using the composite pattern to implement our task lists for our task scheduler. We decided to use the composite design pattern because a task list is a hierarchy of tasks that are composed with subtasks. When the user creates a task, they will have the option to extend the task to include subtasks as part of this one task. Subtasks cannot have other subtasks so they are the primitive types of the composite pattern. Implementing the composite design pattern simplified structuring the task lists. 
+* We will be using the composite pattern to implement our task lists for our task scheduler. We decided to use the composite design pattern because a task list is a hierarchy of tasks that are composed with subtasks. When the user creates a task, they will have the option to extend the task to include subtasks as part of this one task. Subtasks cannot have other subtasks so they are the primitive types of the composite pattern. Implementing the composite design pattern simplified structuring the task lists. 
 
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
