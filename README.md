@@ -16,7 +16,7 @@ Input would be the task title, description and other classifications. The output
  
  ## Design Patterns
 * We will be using the composite pattern to implement our task lists for our task scheduler. We decided to use the composite design pattern because a task list is a hierarchy of tasks that are composed with subtasks. When the user creates a task, they will have the option to extend the task to include subtasks as part of this one task. Subtasks cannot have other subtasks so they are the primitive types of the composite pattern. Implementing the composite design pattern simplified structuring the task lists. 
-
+* We will be using the strategy pattern to implement the classification for our task scheduler.  We decided to use the strategy design pattern because we want the user to be able to change the classification of a task into either "class", "work", or personal" and make them interchangeable inside the original task in case the user wants to change the classification.  After the user creates a task, they will have the option of changing the classification of the task so each class with be grouped together making the task scheduler more clean and efficient.  Implementing a strategy design pattern enables the user to select which classification they want to put their task under. 
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
  > * Before the meeting you should perform a sprint plan like you did in Phase II.
