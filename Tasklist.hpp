@@ -1,23 +1,18 @@
 #ifndef __TASKLIST_HPP__
 #define __TASKLIST_HPP__
 
-class Tasklist {
-private: 
-   std::string title; 
-   std::string descrip; 
+#include <string> 
+#include <stdexcept> 
+
+class Tasklist { 
 public: 
-   Tasklist(std::string t, std::string d ) {
-	title = t; 
-	descrip = d; 
-   }
+   virtual ~Tasklist() = default;  
 
-   virtual ~Tasklist() { } 
-
-   virtual void add_task(); 
-   virtual void delete_task() = 0; 
+   virtual void delete_task(Tasklist* tsk) = 0; 
    virtual void undo_operation() = 0; 
-   virtual void edit_task() = 0; 
-   virtual void display_task() = 0; 
+   virtual void edit_task(Tasklist* tsk) = 0; 
+   virtual void get_title() = 0;
+   virtual void get_descrip() = 0;  
 }; 
 
 
