@@ -9,16 +9,14 @@ We will be using C++, HTML/CSS, Bootstrap, React, Git and Github and UI applicat
 Input would be the task title, description and other classifications. The output would be that you would see the task list and it would be sorted depending on urgency of the task. Some features would be providing a calender to see all the tasks,  filter task depending on urgency, creating an account, having a homepage, ability to make custom lists.
 
 
- > ## Phase II
- > In addition to completing the "Class Diagram" section below, you will need to:
- > * Create an "Epic" (note) for each feature and each design pattern and assign them to the appropriate team member. Place these in the `Backlog` column
- > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
- >   * Create smaller actionable development tasks as issues and assign them to team members. Place these in the `TODO` column.
- >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
+ 
 ## Class Diagram
 ![Final Project](https://user-images.githubusercontent.com/68444503/140805599-90fb035c-b53d-41a1-b700-8ffae4eac7fb.jpeg)
 
  
+ ## Design Patterns
+* We will be using the composite pattern to implement our task lists for our task scheduler. We decided to use the composite design pattern because a task list is a hierarchy of tasks that are composed with subtasks. When the user creates a task, they will have the option to extend the task to include subtasks as part of this one task. Subtasks cannot have other subtasks so they are the primitive types of the composite pattern. Implementing the composite design pattern simplified structuring the task lists. 
+* We will be using the strategy pattern to implement the classification for our task scheduler.  We decided to use the strategy design pattern because we want the user to be able to change the classification of a task into either "class", "work", or personal" and make them interchangeable inside the original task in case the user wants to change the classification.  After the user creates a task, they will have the option of changing the classification of the task so each class with be grouped together making the task scheduler more clean and efficient.  Implementing a strategy design pattern enables the user to select which classification they want to put their task under. 
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
  > * Before the meeting you should perform a sprint plan like you did in Phase II.
