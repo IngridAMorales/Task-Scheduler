@@ -4,15 +4,17 @@
 #include <string> 
 #include <stdexcept> 
 
-class Tasklist { 
+class Tasklist {
+private: 
+   Tasklist* main_task; 
 public: 
+   Tasklist() { main_task = nullptr; } 
    virtual ~Tasklist() = default;  
 
-   virtual void delete_task(Tasklist* tsk) = 0; 
-   virtual void undo_operation() = 0; 
-   virtual void edit_task(Tasklist* tsk) = 0; 
-   virtual void get_title() = 0;
-   virtual void get_descrip() = 0;  
+   // virtual void undo_operation() = 0; 
+   //virtual void edit_task(Tasklist* tsk) = 0; 
+   virtual std::string get_title() = 0;
+   virtual std::string get_descrip() = 0;  
 }; 
 
 
