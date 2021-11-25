@@ -10,10 +10,14 @@ public:
    void SetParent(Tasklist* task) { 
 	this->main_task = task; 
    } 
+   virtual void set_classif(std::string c) = 0; 
+   virtual void set_priority(int i) = 0; 
+   virtual void set_descrip(std::string d) = 0;
    virtual void set_title(std::string t) = 0; 
-   // virtual void undo_operation() = 0; 
-   //virtual void edit_task(Tasklist* tsk) = 0; 
-   virtual std::string get_title() = 0;
-   virtual std::string get_descrip() = 0;  
+     
+   //Each row holds each tasks title, descrip, priority, and classification along that of their subtasks
+   //Can be used to print each tasklist 
+   virtual std::vector<std::string> get_data() = 0;
+    
 }; 
 #endif 

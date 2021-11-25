@@ -3,97 +3,73 @@
 #include "subtask.hpp"
 #include "task.hpp"
 
-TEST(SubTasks, SubtasksTitle){ 
-  Subtask* test = new Subtask("Final Project", "Task Scheduler"); 
-  EXPECT_EQ(test->get_title(), "Final Project"); 
+TEST(SubTasks, GetSubtaskRow){ 
+  Subtask* test = new Subtask("Final Project", "Task Scheduler",1,"School"); 
+  std::vector<std::string> v{"Final Project", "Task Scheduler", "1", "School"}; 
+  EXPECT_EQ(test->get_data(),v); 
 }
-TEST(SubTasks,SubtasksDescrip) { 
-  Subtask* test = new Subtask("Final Project", "Task Scheduler");
-  EXPECT_EQ(test->get_descrip(), "Task Scheduler");
-} 
 
-TEST(Tasks,TaskTitle) { 
-  Tasks* test = new Tasks("Cs100", "Software Construction"); 
-  Tasks* task = new Tasks("Final Project", "Task Scheduler");
-  Tasklist* subtask = new Subtask("Scrum Meeting", "Catch up"); 
+TEST(AddTasks,AddingTasksRow) { 
+  Tasks* test = new Tasks("Cs100", "Software Construction", 1,"School"); 
+  Tasks* task = new Tasks("Final Project", "Task Scheduler", 1,"School");
+  Tasklist* subtask = new Subtask("Scrum Meeting", "Catch up", 1,"School"); 
   test->add_task(task); 
   task->add_task(subtask); 
-  EXPECT_EQ(test->get_title(), "Cs100Final ProjectScrum Meeting"); 
-} 
-TEST(PrintTask, NoSubtasks){ 
-  Tasks* test = new Tasks("Cs100", "Software Construction");
-  std::stringstream s; 
-  test->print_tasks(s); 
-  EXPECT_EQ(s.str(), "Cs100 : Software Construction \n");  
+  std::vector<std::string> v{"Cs100","Software Construction","1","School","Final Project", "Task Scheduler", "1", "School","Scrum Meeting", "Catch up","1","School" };
+ 
+ EXPECT_EQ(test->get_data(), v); 
 }
-TEST(PrintTask, PrintAllTasks){
-  Tasks* test = new Tasks("Cs100", "Software Construction"); 
-  Tasklist* task = new Tasks("Final Project", "Task Scheduler");
-  test->add_task(task); 
-  Tasklist* subtask = new Subtask("Scrum Meeting", "Catch up");
-  test->add_task(subtask); 
-
-  std::stringstream s;
-  test->print_tasks(s);
-  EXPECT_EQ(s.str(), "Cs100 : Software Construction \nFinal Project : Task Scheduler \nScrum Meeting : Catch up \n"); 
-}
-/*
-TEST(PrintTask, PrintSubtasks) { 
-  Tasks* test = new Tasks("Cs100", "Software Construction");
-  Tasks* task = new Tasks("Final Project", "Task Scheduler");
-  Tasklist* subtask = new Subtask("Scrum Meeting", "Catch up");
+TEST(AddTasks,TwoComposites) {
+  Tasks* test = new Tasks("Cs100", "Software Construction", 1,"School");
+  Tasks* task = new Tasks("Final Project", "Task Scheduler", 1,"School");
+  Tasklist* subtask = new Tasks("Scrum Meeting", "Catch up", 1,"School");
   test->add_task(task);
-  task->add_task(subtask);
+  test->add_task(subtask);
+  std::vector<std::string> v{"Cs100","Software Construction","1","School","Final Project", "Task Scheduler", "1", "School","Scrum Meeting", "Catch up","1","School" };
 
-  std::stringstream s;
-  test->print_tasks(s);
-EXPECT_EQ(s.str(), "Cs100 - Software Construction \nFinal Project - Task Scheduler \nScrum Meeting - Catch up \n");
-  
+ EXPECT_EQ(test->get_data(), v);
 }
-*/
+
 TEST(Task, DeleteTask) { 
-  Tasks* test = new Tasks("Cs100", "Software Construction");
-  Tasks* task = new Tasks("Final Project", "Task Scheduler");
-  Tasklist* subtask = new Subtask("Scrum Meeting", "Catch up");
+  Tasks* test = new Tasks("Cs100", "Software Construction", 1,"School");
+  Tasks* task = new Tasks("Final Project", "Task Scheduler", 1,"School");
+  Tasklist* subtask = new Subtask("Scrum Meeting", "Catch up", 1,"School");
   test->add_task(task);
   task->add_task(subtask);
   test->delete_task(task);
 
-  std::stringstream s;
-  test->print_tasks(s);
-EXPECT_EQ(s.str(), "Cs100 : Software Construction \n");
+   std::vector<std::string> v{"Cs100", "Software Construction", "1", "School"};
+EXPECT_EQ(test->get_data(),v );
 }
+
 TEST(Task, DeleteSubTask) {
-  Tasks* test = new Tasks("Cs100", "Software Construction");
-  Tasks* task = new Tasks("Final Project", "Task Scheduler");
-  Tasklist* subtask = new Subtask("Scrum Meeting", "Catch up");
+  Tasks* test = new Tasks("Cs100", "Software Construction", 1,"School");
+  Tasks* task = new Tasks("Final Project", "Task Scheduler", 1,"School");
+  Tasklist* subtask = new Subtask("Scrum Meeting", "Catch up", 1,"School");
   test->add_task(task);
   task->add_task(subtask);
   task->delete_task(subtask);
 
-  std::stringstream s;
-  test->print_tasks(s);
-EXPECT_EQ(s.str(), "Cs100 : Software Construction \nFinal Project : Task Scheduler \n");
+   std::vector<std::string> v{"Final Project", "Task Scheduler", "1", "School"};
+EXPECT_EQ(task->get_data(), v);
 }
-TEST(Task, SetTitle){ 
-  Tasks* test = new Tasks("Cs100", "Software Construction");
-  test->set_title("135a"); 
-  
-  std::stringstream s;
-  test->print_tasks(s);
-EXPECT_EQ(s.str(), "135a : Software Construction \n"); 
-}
-TEST(Task, EditSubTask) {
-  Tasks* test = new Tasks("Cs100", "Software Construction");
-  Tasks* task = new Tasks("Final Project", "Task Scheduler");
-  Tasklist* subtask = new Subtask("Scrum Meeting", "Catch up");
-  test->add_task(task);
-  test->add_task(subtask);
-  test->edit_title(subtask, "Sprint"); 
 
-  std::stringstream s;
-  test->print_tasks(s);
-EXPECT_EQ(s.str(), "Cs100 : Software Construction \nFinal Project : Task Scheduler \nSprint : Catch up \n");
+TEST(Task, SetTitle){ 
+  Tasks* test = new Tasks("Cs100", "Software Construction", 1,"School");
+  test->set_title("135a"); 
+   std::vector<std::string> v{"135a", "Software Construction", "1", "School"};
+EXPECT_EQ(test->get_data(), v); 
+}
+
+TEST(Task, EditSubTask) {
+  Tasks* test = new Tasks("Cs100", "Software Construction", 1,"School");
+  Tasks* task = new Tasks("Final Project", "Task Scheduler", 1,"School");
+  Tasklist* subtask = new Tasks("Scrum Meeting", "Catch up", 1,"School");
+  test->add_task(task);
+ test->add_task(subtask);
+  test->edit_title(subtask, "Sprint"); 
+std::vector<std::string> v{"Cs100","Software Construction","1","School","Final Project", "Task Scheduler", "1", "School","Sprint", "Catch up","1","School" };
+EXPECT_EQ(test->get_data(),v);
 }
 
 int main(int argc, char **argv) {
