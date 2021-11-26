@@ -2,8 +2,6 @@
 #define __SUBTASK_HPP__ 
 
 #include "tasklist.hpp"
-#include <boost/assign/std/vector.hpp> // for 'operator+=()'
-#include <boost/assert.hpp>
 
 class Subtask : public Tasklist {
 private:

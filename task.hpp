@@ -17,7 +17,15 @@ private:
    std::vector<Tasklist*> subtasks;
 public: 
    Tasks(const std::string &t, const std::string &d, int p, const std::string &c): title(t), descrip(d), priority(p), classif(c){} 
-   ~Tasks() {} 
+   
+   ~Tasks() {
+   	for( int i = 0; i < subtasks.size(); i++){ 
+	   Tasklist* task = subtasks.at(i); 
+	   delete task; 
+	}
+	subtasks.clear(); 
+   } 
+
    virtual void add_task(Tasklist* new_task){	//adds composite tasks and subtasks 
  	subtasks.push_back(new_task);
   	new_task->SetParent(this);  	
@@ -62,9 +70,8 @@ public:
     virtual void set_classif(std::string c){ classif = c; }
 
     virtual std::vector<std::string> get_data() { 
-	prior = std::to_string(priority); 
-	current_task = {title, descrip, prior, classif}; 
-        
+        prior = std::to_string(priority); 
+	current_task = {title, descrip, prior, classif};    
 	for(int i =0; i< subtasks.size(); ++i){
 	  data = subtasks.at(i)->get_data();  
 	}

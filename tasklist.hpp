@@ -6,7 +6,8 @@ class Tasklist {
 private: 
    Tasklist* main_task; 
 public: 
-   virtual ~Tasklist() {}
+   virtual ~Tasklist()= default; 
+   
    void SetParent(Tasklist* task) { 
 	this->main_task = task; 
    } 
