@@ -31,7 +31,7 @@ public:
 void print(){
     std::cout << "Title: " << title << "\n";
     std::cout << "Description: " << descrip << "\n";
-    std::cout << "Priority: " << prior << "\n";
+    std::cout << "Priority: " << priority << "\n";
     std::cout << "Classification: " << classif << "\n\n";
   }
 };
