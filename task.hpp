@@ -1,6 +1,9 @@
 #ifndef __TASK_HPP__
 #define __TASK_HPP__
 #include "tasklist.hpp" 
+#include "classification.hpp"
+#include "linear.hpp"
+#include "magnitude.hpp"
 #include <vector>
 #include <algorithm>
 
@@ -15,6 +18,8 @@ private:
    std::vector<std::string> current_task;
    std::vector<std::string> data;  
    std::vector<Tasklist*> subtasks;
+   Classification* strategy;
+
 public: 
    Tasks(const std::string &t, const std::string &d, int p, const std::string &c): title(t), descrip(d), priority(p), classif(c){} 
    ~Tasks() {} 
@@ -61,6 +66,8 @@ public:
     virtual void set_priority(int p){ priority = p; }
     virtual void set_classif(std::string c){ classif = c; }
 
+    virtual void set_strat(Classification* cl){ strategy = cl;}
+
     virtual std::vector<std::string> get_data() { 
 	prior = std::to_string(priority); 
 	current_task = {title, descrip, prior, classif}; 
@@ -79,8 +86,14 @@ public:
     return subtasks;
   }
 
+  
+
   int get_Priority(){
     return priority;
+  }
+
+  std::string get_Classif(){
+    return classif;
   }
 
   void print(){
@@ -89,7 +102,12 @@ public:
     std::cout << "Priority: " << priority << "\n";
     std::cout << "Classification: " << classif << "\n\n";
   }
+/*
+  void printAll(Tasks* obj, int school, int personal, int work){
 
+    strategy->display(obj, school, personal, work);
+  }
+*/
 };
 
 #endif   

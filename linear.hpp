@@ -12,21 +12,22 @@ class Linear : public Classification{
         Linear(){}
         virtual ~Linear(){}
 
-        //need a  way to check whether tasks in subtask vector 
-        void display(Tasks* tasklist){
-            
-            std::vector<Tasklist*> subtasks = tasklist->get_Subtasks();
+        void display(Tasks* obj, int school, int personal, int work){
+            std::vector<Tasklist*> subtasks = obj->get_Subtasks();
             for(int i = 0; i<subtasks.size()-1; i++){
-                int min = i;
+                int max = i;
                 for(int j = i+1; j<subtasks.size(); j++)
-                    if(subtasks[j]->get_Priority() < subtasks[min]->get_Priority())
-                        min = j;
-                Tasklist* temp = subtasks[min];
-                subtasks[min] = subtasks[i];
+                    if(subtasks[j]->get_Priority() > subtasks[max]->get_Priority())
+                        max = j;
+                Tasklist* temp = subtasks[max];
+                subtasks[max] = subtasks[i];
                 subtasks[i] = temp;
             }
             for(int i = 0; i<subtasks.size(); i++)
                 subtasks[i]->print();
+            std::cout << "\n\n";
+            for(int i = 0; i<subtasks.size(); i++)
+                delete subtasks[i];
         }
     
 };
