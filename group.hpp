@@ -17,6 +17,17 @@ class Group : public Classification{
 
         void display(std::vector<Tasklist*> &subtasks){
             std::cout <<"Subtasks size: "<< subtasks.size()<< "\n\n";
+
+            for(int i = 0; i<subtasks.size()-1; i++){
+                int max = i;
+                for(int j = i+1; j<subtasks.size(); j++){
+                    if(subtasks[j]->get_Priority() > subtasks[max]->get_Priority())
+                        max = j;
+		        }
+                Tasklist* temp = subtasks[max];
+                subtasks[max] = subtasks[i];
+                subtasks[i] = temp;
+            }
             
             if(school == 3)
                 for(int i =0; i<subtasks.size(); i++)
