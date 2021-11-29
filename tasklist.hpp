@@ -1,15 +1,13 @@
 #ifndef __TASKLIST_HPP__
 #define __TASKLIST_HPP__
-#include <string>
 #include <vector>
-
 
 class Tasklist {
 private: 
    Tasklist* main_task; 
+   int priority; 
 public: 
-   virtual ~Tasklist()= default; 
-   
+   virtual ~Tasklist() {}
    void SetParent(Tasklist* task) { 
 	this->main_task = task; 
    } 
@@ -21,6 +19,10 @@ public:
    //Each row holds each tasks title, descrip, priority, and classification along that of their subtasks
    //Can be used to print each tasklist 
    virtual std::vector<std::string> get_data() = 0;
+
+   virtual int get_Priority() = 0;
+   virtual std::string get_Classif() = 0; 
+   virtual void print() = 0;
     
 }; 
 #endif 
