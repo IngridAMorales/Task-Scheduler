@@ -14,7 +14,7 @@ class Classification{
         Classification(){}
         virtual ~Classification(){}
 
-        virtual void display(Tasks* tasklist) = 0;
+        virtual void display(std::vector<Tasklist*> &subtasks) = 0;
     
 };
 

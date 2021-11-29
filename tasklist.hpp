@@ -1,6 +1,6 @@
 #ifndef __TASKLIST_HPP__
 #define __TASKLIST_HPP__
-
+#include <vector>
 
 class Tasklist {
 private: 
@@ -21,7 +21,7 @@ public:
    virtual std::vector<std::string> get_data() = 0;
 
    virtual int get_Priority() = 0;
-
+   virtual std::string get_Classif() = 0; 
    virtual void print() = 0;
     
 }; 

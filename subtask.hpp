@@ -27,7 +27,9 @@ public:
    int get_Priority(){
     return priority;
   }
-
+   std::string get_Classif(){
+    return classif;
+  }
 void print(){
     std::cout << "Title: " << title << "\n";
     std::cout << "Description: " << descrip << "\n";
