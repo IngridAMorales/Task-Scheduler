@@ -13,9 +13,8 @@ TEST(GetData, GetTaskData){
 TEST(AddTasks,AddingTasklist) { 
   Tasks* test = new Tasks("Cs100", "Software Construction", 1,"School"); 
   Tasks* task = new Tasks("Final Project", "Task Scheduler", 1,"School");
-  Tasklist* subtask = new Subtask("Scrum Meeting", "Catch up", 1,"School"); 
-  test->add_task(task); 
-  task->add_task(subtask); 
+  Tasklist* subtask = new Subtask("Scrum Meeting", "Catch up", 1,"School");  
+  test->add_task(subtask); 
   std::vector<std::string> v{"Cs100","Software Construction","1","School","Final Project", "Task Scheduler", "1", "School","Scrum Meeting", "Catch up","1","School" };
  EXPECT_EQ(test->get_data(), v); 
   delete test; 

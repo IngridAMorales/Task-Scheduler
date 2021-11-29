@@ -3,7 +3,7 @@
 #include "tasklist.hpp" 
 #include <vector>
 #include <algorithm>
-
+#include <string>
 class Tasks: public Tasklist {
 private:
    

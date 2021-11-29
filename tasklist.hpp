@@ -1,5 +1,7 @@
 #ifndef __TASKLIST_HPP__
 #define __TASKLIST_HPP__
+#include <string>
+#include <vector>
 
 
 class Tasklist {
