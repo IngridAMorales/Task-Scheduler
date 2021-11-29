@@ -2,6 +2,8 @@
 #define __SUBTASK_HPP__ 
 
 #include "tasklist.hpp"
+#include <iostream>
+#include <string>
 
 class Subtask : public Tasklist {
 private:

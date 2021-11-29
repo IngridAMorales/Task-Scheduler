@@ -5,7 +5,8 @@
 #include "subtask.hpp"
 #include "task.hpp"
 #include "classification.hpp"
-
+#include <vector>
+#include <string>
 
 class Linear : public Classification{
     public:

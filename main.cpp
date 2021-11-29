@@ -1,6 +1,10 @@
 #include "tasklist.hpp"
 #include "subtask.hpp"
 #include "task.hpp"
+#include "classification.hpp"
+#include "linear.hpp"
+#include "magnitude.hpp"
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -44,10 +48,15 @@ int main(){
     if (userInput == "display"){
    cout << "Task List" << endl << endl;
  
-    vector<string> taskList = list->get_data();
+/*    vector<string> taskList = list->get_data();
     for (int i =0;i<taskList.size();++i){
      cout << taskList.at(i) << endl;
-}
+}*/
+
+Classification* sort1 =new Linear();
+list->set_strat(sort1);
+list->printAll();
+
 }
 
 else if (userInput == "add"){
@@ -83,7 +92,7 @@ else if (userInput == "add"){
    	cin>> SubTaskPrior;
    	cin.ignore();
     //subtask = new Subtask(SubTaskTitle,SubTaskDescrip,SubTaskPrior,SubTaskClass);
-   task->add_task(new Subtask(SubTaskTitle,SubTaskDescrip,SubTaskPrior,SubTaskClass));
+   list->add_task(new Subtask(SubTaskTitle,SubTaskDescrip,SubTaskPrior,SubTaskClass));
    cout << "Subtask added!" << endl << endl;
 
    cout << "Would you like to create subtasks?" << endl << endl;

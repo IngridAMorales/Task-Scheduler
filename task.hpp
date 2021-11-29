@@ -3,6 +3,8 @@
 #include "tasklist.hpp" 
 #include <vector>
 #include <algorithm>
+#include <string>
+#include <iostream>
 #include "classification.hpp"
 
 class Tasks: public Tasklist {
