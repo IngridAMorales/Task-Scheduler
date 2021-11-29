@@ -18,15 +18,15 @@ class Group : public Classification{
         void display(std::vector<Tasklist*> &subtasks){
             std::cout <<"Subtasks size: "<< subtasks.size()<< "\n\n";
             
-            if(school==3)
+            if(school == 3)
                 for(int i =0; i<subtasks.size(); i++)
                     if(subtasks[i]->get_Classif() == "School")
                         subtasks[i]->print();
-            else if(personal==3)
+            if(personal==3)
                 for(int i =0; i<subtasks.size(); i++)
                     if(subtasks[i]->get_Classif() == "Personal")
                         subtasks[i]->print();
-            else if(work==3)
+            if(work==3)
                 for(int i =0; i<subtasks.size(); i++)
                     if(subtasks[i]->get_Classif() == "Work")
                         subtasks[i]->print();
@@ -35,11 +35,11 @@ class Group : public Classification{
                 for(int i =0; i<subtasks.size(); i++)
                     if(subtasks[i]->get_Classif() == "School")
                         subtasks[i]->print();
-            else if(personal==2)
+            if(personal==2)
                 for(int i =0; i<subtasks.size(); i++)
                     if(subtasks[i]->get_Classif() == "Personal")
                         subtasks[i]->print();
-            else if(work==2)
+            if(work==2)
                 for(int i =0; i<subtasks.size(); i++)
                     if(subtasks[i]->get_Classif() == "Work")
                         subtasks[i]->print();
@@ -48,11 +48,11 @@ class Group : public Classification{
                 for(int i =0; i<subtasks.size(); i++)
                     if(subtasks[i]->get_Classif() == "School")
                         subtasks[i]->print();
-            else if(personal==1)
+            if(personal==1)
                 for(int i =0; i<subtasks.size(); i++)
                     if(subtasks[i]->get_Classif() == "Personal")
                         subtasks[i]->print();
-            else if(work==1)
+            if(work==1)
                 for(int i =0; i<subtasks.size(); i++)
                     if(subtasks[i]->get_Classif() == "Work")
                         subtasks[i]->print();

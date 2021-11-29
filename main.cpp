@@ -37,7 +37,7 @@ int main () {
 
     std::cout << "Group Sort\n";
     Classification* sort3 = new Group(1,2,3);
-    test->set_strat(sort2);
+    test->set_strat(sort3);
     test->printAll();
     
     return 0;
