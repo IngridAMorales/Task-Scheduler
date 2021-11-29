@@ -1,31 +1,23 @@
-class classification
-{
-	public:
 
-		virtual ~classification() {}
-		virtual std::string label () const = 0;
-}
+#ifndef __CLASSIFICATION_HPP__
+#define __CLASSIFICATION_HPP__
 
-class work:public classification {}
-{
-        public:
+#include "task.hpp"
+#include "tasklist.hpp"
 
-		~work() {}	
-		std::string label ();
-}
 
-class school:public classification {}
-{
-        public:
-		
-		~school() {}
-		std::string label ();
-}
+class Classification{
+    private:
+        int priority;
+        char flair;
+        int date;
+    public:
+        Classification(){}
+        virtual ~Classification(){}
 
-class personal:public classification {}
-{
-        public:	
+        virtual void display(std::vector<Tasklist*> &subtasks) = 0;
+    
+};
 
-		~personal() {}
-		std::string label (;
-}
+
+#endif 
