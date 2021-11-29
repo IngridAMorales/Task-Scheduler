@@ -3,10 +3,11 @@
 #include "tasklist.hpp" 
 #include <vector>
 #include <algorithm>
-#include <string>
+#include "classification.hpp"
+
 class Tasks: public Tasklist {
 private:
-   
+   Classification* sort = nullptr; 
    std::string classif; 
    int priority; 
    std::string prior;  
@@ -17,15 +18,7 @@ private:
    std::vector<Tasklist*> subtasks;
 public: 
    Tasks(const std::string &t, const std::string &d, int p, const std::string &c): title(t), descrip(d), priority(p), classif(c){} 
-   
-   ~Tasks() {
-   	for( int i = 0; i < subtasks.size(); i++){ 
-	   Tasklist* task = subtasks.at(i); 
-	   delete task; 
-	}
-	subtasks.clear(); 
-   } 
-
+   ~Tasks() {} 
    virtual void add_task(Tasklist* new_task){	//adds composite tasks and subtasks 
  	subtasks.push_back(new_task);
   	new_task->SetParent(this);  	
@@ -68,10 +61,12 @@ public:
     virtual void set_descrip(std::string d){ descrip = d; }
     virtual void set_priority(int p){ priority = p; }
     virtual void set_classif(std::string c){ classif = c; }
+    virtual void set_strat(Classification* cl){ sort = cl;}
 
     virtual std::vector<std::string> get_data() { 
-        prior = std::to_string(priority); 
-	current_task = {title, descrip, prior, classif};    
+	prior = std::to_string(priority); 
+	current_task = {title, descrip, prior, classif}; 
+        
 	for(int i =0; i< subtasks.size(); ++i){
 	  data = subtasks.at(i)->get_data();  
 	}
@@ -81,6 +76,29 @@ public:
 	
 	return current_task;
     }
+  
+  std::vector<Tasklist*> get_Subtasks(){
+    return subtasks;
+  }
+
+  int get_Priority(){
+    return priority;
+  }
+  std::string get_Classif(){
+    return classif;
+  }
+  void print(){
+    std::cout << "Title: " << title << "\n";
+    std::cout << "Description: " << descrip << "\n";
+    std::cout << "Priority: " << priority << "\n";
+    std::cout << "Classification: " << classif << "\n\n";
+  
+}
+  void printAll(){
+	sort->display(subtasks);  		
+
+  }
+  
 };
 
 #endif   
