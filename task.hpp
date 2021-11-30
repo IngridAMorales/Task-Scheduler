@@ -76,10 +76,6 @@ public:
 	
 	return current_task;
     }
-  
-  std::vector<Tasklist*> get_Subtasks(){
-    return subtasks;
-  }
 
   int get_Priority(){
     return priority;
@@ -87,16 +83,16 @@ public:
   std::string get_Classif(){
     return classif;
   }
-  void print(){
-    std::cout << "Title: " << title << "\n";
-    std::cout << "Description: " << descrip << "\n";
-    std::cout << "Priority: " << priority << "\n";
-    std::cout << "Classification: " << classif << "\n\n";
+  void print(std::ostream& out){
+    out << "Title: " << title << "\n";
+    out << "Description: " << descrip << "\n";
+    out << "Priority: " << priority << "\n";
+    out << "Classification: " << classif << "\n\n";
   
-}
+  }
   void printAll(){
 	sort->display(subtasks);  		
-
+        
   }
   
 };

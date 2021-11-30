@@ -5,7 +5,8 @@
 #include "subtask.hpp"
 #include "task.hpp"
 #include "classification.hpp"
-
+#include <string> 
+#include <sstream>
 
 class Linear : public Classification{
     public:
@@ -25,9 +26,11 @@ class Linear : public Classification{
                 subtasks[min] = subtasks[i];
                 subtasks[i] = temp;
             }
-	    
-            for(int i = 0; i<subtasks.size(); i++)
-                subtasks[i]->print();
+	    /*
+            for(int i = 0; i<subtasks.size(); i++){ 
+                subtasks[i]->print(std::cout);
+	    }
+	   */
         }
     
 };
