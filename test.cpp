@@ -5,6 +5,7 @@
 #include "classification.hpp"
 #include "linear.hpp"
 
+
 TEST(GetData, GetTaskData){ 
   Tasklist* test = new Tasks("Final Project", "Task Scheduler",1,"School"); 
   std::vector<std::string> v{"Final Project", "Task Scheduler", "1", "School"}; 
@@ -95,6 +96,7 @@ EXPECT_EQ(test->get_data(),v);
   delete test; 
 }
 
+
 TEST(Linear, DisplayFunction){
 
    Tasks* test = new Tasks("Cs100", "Software Construction", 1,"School"); 
@@ -116,7 +118,6 @@ TEST(Linear, DisplayFunction){
     EXPECT_EQ(test->get_Subtasks(), compare);
 
 }
-
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
