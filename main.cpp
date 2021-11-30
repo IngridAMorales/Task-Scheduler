@@ -29,7 +29,7 @@ int main(){
   cout << "Input Task Classification (School,Work, or Personal): " << endl;
    cin >> TaskListClass;
    cin.ignore();
-   cout << "1 - High Priority, 2 - Medium Priority, 3 - Low Priority" << endl;
+   cout << "3 - High Priority, 2 - Medium Priority, 1 - Low Priority" << endl;
    cout << "Input Priority Level:" << endl;
    cin>> TaskListPrior;
    Tasks* list = new Tasks(TaskListTitle,TaskListDescrip,TaskListPrior,TaskListClass);

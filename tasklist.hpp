@@ -23,10 +23,5 @@ public:
    virtual int get_Priority() = 0;
    virtual std::string get_Classif() = 0; 
    virtual void print() = 0;
-    
-   virtual int get_Priority() = 0;
-   virtual std::string get_Classif() = 0; 
-
-   virtual void print() = 0;
 }; 
 #endif 
