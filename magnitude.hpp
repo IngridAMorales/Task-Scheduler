@@ -16,7 +16,7 @@ class Magnitude : public Classification{
 
 //need a  way to check whether tasks in subtask vector 
         void display(std::vector<Tasklist*> &subtasks){
-
+            std::cout<<"Subtasks size: "<< subtasks.size()<< "\n\n"; 
             std::vector<int> placeholders;
             for(int i=0; i<subtasks.size(); i++){
                 if(subtasks[i]->get_Classif() == "School")
@@ -41,10 +41,6 @@ class Magnitude : public Classification{
             for(int i = 0; i<subtasks.size(); i++)
                 subtasks[i]->print();
             std::cout << "\n\n";
-/*
-            for(int i = 0; i<subtasks.size(); i++)
-                delete subtasks[i];
-        */
 	}
  
 };
