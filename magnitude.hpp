@@ -39,7 +39,7 @@ class Magnitude : public Classification{
                 placeholders[i] = temp2;
             }
             for(int i = 0; i<subtasks.size(); i++)
-                subtasks[i]->print(std::cout);
+                subtasks[i]->print();
             std::cout << "\n\n";
 	}
  
