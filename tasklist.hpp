@@ -20,5 +20,8 @@ public:
    //Can be used to print each tasklist 
    virtual std::vector<std::string> get_data() = 0;
     
+   virtual int get_Priority() = 0;
+   virtual std::string get_Classif() = 0; 
+   virtual void print() = 0;
 }; 
 #endif 
