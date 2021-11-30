@@ -11,7 +11,8 @@ Input would be the task title, description and other classifications. The output
 
  
 ## Class Diagram
-![Final Project](https://user-images.githubusercontent.com/68444503/140805599-90fb035c-b53d-41a1-b700-8ffae4eac7fb.jpeg)
+![Final Project](https://user-images.githubusercontent.com/68444503/143988465-4a124263-b753-47db-ad6f-31f13688ef12.png)
+
 
  
  ## Design Patterns
