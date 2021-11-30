@@ -4,10 +4,9 @@
  
 
 ## Project Description
-As we are all college students, productivity and time management are important skills to have as a student so that we can stay on top of all our tasks. Making an application that keeps track of our assignments along with their due dates, will make sure we succeed in our all out classes.
-We will be using C++, HTML/CSS, Bootstrap, React, Git and Github and UI applications such as Typeform(https://www.typeform.com) which is a people-friendly form and survey that connects to the project and keeps track of all the responses.
-Input would be the task title, description and other classifications. The output would be that you would see the task list and it would be sorted depending on urgency of the task. Some features would be providing a calender to see all the tasks,  filter task depending on urgency, creating an account, having a homepage, ability to make custom lists.
-
+* As we are all college students, productivity and time management are important skills to have as a student so that we can stay on top of all our tasks. Making an application that keeps track of our assignments along with their priorities, will make sure we succeed in our all our classes.
+* We will be using C++, Git and Github to implement our task scheduler. 
+* Input would be the task title, description, classifications (school, personal, work), and priority. The user will prioritize each task and classification. Our program sorts our subtasks depending on urgency of the task and the urgency of the classification. 
 
  
 ## Class Diagram
