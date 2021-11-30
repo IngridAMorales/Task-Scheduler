@@ -2,9 +2,9 @@
 #include "tasklist.hpp"
 #include "subtask.hpp"
 #include "task.hpp"
+#include "unittest.hpp"
 #include "classification.hpp"
 #include "linear.hpp"
-
 
 TEST(GetData, GetTaskData){ 
   Tasklist* test = new Tasks("Final Project", "Task Scheduler",1,"School"); 
