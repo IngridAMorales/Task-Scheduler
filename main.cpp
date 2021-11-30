@@ -21,7 +21,7 @@ int main(){
   string TaskListTitle,TaskListDescrip,TaskListClass;
   int TaskPrior,SubTaskPrior,TaskListPrior;
 
-   cout << "Welcome to the Task List Scheduler! " << endl << endl;
+   cout << endl << "Welcome to the Task List Scheduler! " << endl << endl;
    cout << "Let's Name Your Task List!" << endl << endl;
    getline(cin,TaskListTitle);
   cout << "Input Task List Description: " << endl;
