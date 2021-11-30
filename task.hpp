@@ -4,6 +4,7 @@
 #include "classification.hpp"
 #include <vector>
 #include <algorithm>
+#include "classification.hpp"
 
 class Tasks: public Tasklist {
 private:
@@ -23,10 +24,11 @@ public:
    	for( int i = 0; i < subtasks.size(); i++){ 
 	   Tasklist* task = subtasks.at(i); 
 	   delete task; 
-	}
-	subtasks.clear(); 
-	delete sort; 
-}  
+	  }
+	   subtasks.clear(); 
+	   delete sort; 
+   } 
+
    virtual void add_task(Tasklist* new_task){	//adds composite tasks and subtasks 
  	subtasks.push_back(new_task);
   	new_task->SetParent(this);  	
@@ -37,11 +39,11 @@ public:
 	delete task; 
     }
     virtual void edit_title(Tasklist* task, std::string title) {
-	for(int i =0; i< subtasks.size(); ++i){
+	    for(int i =0; i< subtasks.size(); ++i){
          if(task ==subtasks.at(i)){ 
-	   subtasks.at(i)->set_title(title); 
-	 }
-        }	
+	          subtasks.at(i)->set_title(title); 
+	       }
+      }	
     }
     virtual void edit_descrip(Tasklist* task, std::string descrip) {
         for(int i =0; i< subtasks.size(); ++i){
@@ -96,6 +98,7 @@ public:
   std::string get_Classif(){
     return classif;
   }
+
   std::string get_title(){
    return title;
 }
@@ -109,7 +112,6 @@ public:
 
   void printAll(){
 	sort->display(subtasks);  		
-
   }
 
 };

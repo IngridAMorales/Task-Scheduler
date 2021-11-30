@@ -22,8 +22,8 @@ public:
     virtual void set_classif(std::string c){ classif = c; }
    virtual std::vector<std::string> get_data() {
    	prior = std::to_string(priority);
-	data = {title, descrip,prior, classif}; 
-	return data; 
+	  data = {title, descrip,prior, classif}; 
+	  return data; 
    }
 
    int get_Priority(){
@@ -31,16 +31,19 @@ public:
   }
   std::string get_title(){
    return title;
-}
+  }
    std::string get_Classif(){
     return classif;
   }
-void print(){
+
+  void print(){
     std::cout << "Title: " << title << "\n";
     std::cout << "Description: " << descrip << "\n";
     std::cout << "Priority: " << priority << "\n";
     std::cout << "Classification: " << classif << "\n\n";
   }
+
+
 };
 
 
