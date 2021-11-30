@@ -4,13 +4,15 @@
 
 class Tasklist {
 private: 
-   Tasklist* main_task; 
+   //Tasklist* main_task; 
    int priority; 
 public: 
    virtual ~Tasklist() {}
+/*
    void SetParent(Tasklist* task) { 
 	this->main_task = task; 
-   } 
+   }
+*/ 
    virtual void set_classif(std::string c) = 0; 
    virtual void set_priority(int i) = 0; 
    virtual void set_descrip(std::string d) = 0;
@@ -22,7 +24,7 @@ public:
 
    virtual int get_Priority() = 0;
    virtual std::string get_Classif() = 0; 
-   virtual void print(std::ostream& out) = 0;
+   virtual void print() = 0;
     
 }; 
 #endif 

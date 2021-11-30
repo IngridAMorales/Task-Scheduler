@@ -21,7 +21,7 @@ public:
    ~Tasks() {} 
    virtual void add_task(Tasklist* new_task){	//adds composite tasks and subtasks 
  	subtasks.push_back(new_task);
-  	new_task->SetParent(this);  	
+  	//new_task->SetParent(this);  	
     }
     virtual void delete_task(Tasklist* task) { 
 	subtasks.erase(std::remove(subtasks.begin(), subtasks.end(), task), subtasks.end());
@@ -83,11 +83,11 @@ public:
   std::string get_Classif(){
     return classif;
   }
-  void print(std::ostream& out){
-    out << "Title: " << title << "\n";
-    out << "Description: " << descrip << "\n";
-    out << "Priority: " << priority << "\n";
-    out << "Classification: " << classif << "\n\n";
+  void print(){
+    std::cout << "Title: " << title << "\n";
+    std::cout << "Description: " << descrip << "\n";
+    std::cout << "Priority: " << priority << "\n";
+    std::cout << "Classification: " << classif << "\n\n";
   
   }
   void printAll(){
