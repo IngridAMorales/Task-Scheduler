@@ -16,7 +16,7 @@
  
  ## Design Patterns
 * We will be using the composite pattern to implement our task lists for our task scheduler. We decided to use the composite design pattern because a task list is a hierarchy of tasks that are composed with subtasks. When the user creates a task, they will have the option to extend the task to include subtasks as part of this one task. Subtasks cannot have other subtasks so they are the primitive types of the composite pattern. Implementing the composite design pattern simplified structuring the task lists. 
-* We will be using the strategy pattern to implement the classification for our task scheduler.  We decided to use the strategy design pattern because we want the user to be able to change the classification of a task into either "school", "personal", or work" which is defined by numbers 1, 2, and 3.  By ranking the tasks by 1, 2, or 3, it will determine the magnitude of the priority of the classification for each task and rank the tasks for the user. 
+* We will be using the strategy design pattern to implement the classification for our task scheduler because we want to sort the tasks lists based on priority of each task and the priority of each classification.  Each concrete strategy class displays a different sorted task list.  We decided to use the strategy design pattern because we want the user to be able to change the classification of a task into either "school", "personal", or work" which is defined by numbers 1, 2, and 3.  By ranking the tasks by 1, 2, or 3, it will determine the magnitude of the priority of the classification for each task and rank the tasks for the user. 
 
 
  
