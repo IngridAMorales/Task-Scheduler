@@ -12,7 +12,7 @@ class Group : public Classification{
 	int school, personal, work;  
    public:
    //user should only have option to choose values 1-3
-	Group(int s, int p, int w): school(s), personal(p), work(w) {}
+        Group(int s, int p, int w): school(s), personal(p), work(w) {}
         virtual ~Group(){}
 
         void display(std::vector<Tasklist*> &subtasks){

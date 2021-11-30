@@ -20,7 +20,7 @@ class Linear : public Classification{
                 for(int j = i+1; j<subtasks.size(); j++){
                     if(subtasks[j]->get_Priority() > subtasks[max]->get_Priority())
                         max = j;
-		}
+		            }
                 Tasklist* temp = subtasks[max];
                 subtasks[max] = subtasks[i];
                 subtasks[i] = temp;
@@ -28,9 +28,7 @@ class Linear : public Classification{
 	    
             for(int i = 0; i<subtasks.size(); i++){ 
                 subtasks[i]->print();
-
-            std::cout << "\n\n";
-	    }
+	         }
 	  
         }
     

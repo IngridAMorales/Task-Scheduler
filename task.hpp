@@ -1,6 +1,7 @@
 #ifndef __TASK_HPP__
 #define __TASK_HPP__
 #include "tasklist.hpp" 
+#include "classification.hpp"
 #include <vector>
 #include <algorithm>
 #include "classification.hpp"
@@ -23,9 +24,9 @@ public:
    	for( int i = 0; i < subtasks.size(); i++){ 
 	   Tasklist* task = subtasks.at(i); 
 	   delete task; 
-	}
-	subtasks.clear(); 
-	delete sort; 
+	  }
+	   subtasks.clear(); 
+	   delete sort; 
    } 
 
    virtual void add_task(Tasklist* new_task){	//adds composite tasks and subtasks 
@@ -38,11 +39,11 @@ public:
 	delete task; 
     }
     virtual void edit_title(Tasklist* task, std::string title) {
-	for(int i =0; i< subtasks.size(); ++i){
+	    for(int i =0; i< subtasks.size(); ++i){
          if(task ==subtasks.at(i)){ 
-	   subtasks.at(i)->set_title(title); 
-	 }
-        }	
+	          subtasks.at(i)->set_title(title); 
+	       }
+      }	
     }
     virtual void edit_descrip(Tasklist* task, std::string descrip) {
         for(int i =0; i< subtasks.size(); ++i){
@@ -98,6 +99,10 @@ public:
     return classif;
   }
 
+  std::string get_title(){
+   return title;
+}
+
   void print(){
     std::cout << "Title: " << title << "\n";
     std::cout << "Description: " << descrip << "\n";
@@ -107,7 +112,6 @@ public:
 
   void printAll(){
 	sort->display(subtasks);  		
-        
   }
 
 };

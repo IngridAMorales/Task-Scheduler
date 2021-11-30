@@ -2,6 +2,8 @@
 #define __SUBTASK_HPP__ 
 
 #include "tasklist.hpp"
+#include <iostream>
+#include <string>
 
 class Subtask : public Tasklist {
 private:
@@ -20,11 +22,15 @@ public:
     virtual void set_classif(std::string c){ classif = c; }
    virtual std::vector<std::string> get_data() {
    	prior = std::to_string(priority);
-	data ={title, descrip,prior, classif}; 
-	return data; 
+	  data = {title, descrip,prior, classif}; 
+	  return data; 
    }
+
    int get_Priority(){
     return priority;
+  }
+  std::string get_title(){
+   return title;
   }
    std::string get_Classif(){
     return classif;
@@ -35,7 +41,8 @@ public:
     std::cout << "Description: " << descrip << "\n";
     std::cout << "Priority: " << priority << "\n";
     std::cout << "Classification: " << classif << "\n\n";
-  } 
+  }
+
 
 };
 
