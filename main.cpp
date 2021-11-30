@@ -91,8 +91,9 @@ else if (userInput == "add"){
    	cout << "Input Priority Level:" << endl;
    	cin>> SubTaskPrior;
    	cin.ignore();
-    //subtask = new Subtask(SubTaskTitle,SubTaskDescrip,SubTaskPrior,SubTaskClass);
-   list->add_task(new Subtask(SubTaskTitle,SubTaskDescrip,SubTaskPrior,SubTaskClass));
+    subtask = new Subtask(SubTaskTitle,SubTaskDescrip,SubTaskPrior,SubTaskClass);
+   //list->add_task(new Subtask(SubTaskTitle,SubTaskDescrip,SubTaskPrior,SubTaskClass));
+   list->add(subtask);
    cout << "Subtask added!" << endl << endl;
 
    cout << "Would you like to create subtasks?" << endl << endl;
@@ -134,9 +135,10 @@ else{
     cout << endl;
 
 }
-
+delete task;
 delete list;
-
+delete subtask;
+delete sort1;
 cout << "Goodbye!" << endl;
 
 

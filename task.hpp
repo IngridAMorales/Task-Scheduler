@@ -20,7 +20,14 @@ private:
    std::vector<Tasklist*> subtasks;
 public: 
    Tasks(const std::string &t, const std::string &d, int p, const std::string &c): title(t), descrip(d), priority(p), classif(c){} 
-   ~Tasks() {} 
+   ~Tasks() {
+   for( int i = 0; i < subtasks.size(); i++){ 
+	   Tasklist* task = subtasks.at(i); 
+	   delete task; 
+	}
+	subtasks.clear(); 
+	delete sort; 
+} 
    virtual void add_task(Tasklist* new_task){	//adds composite tasks and subtasks 
  	subtasks.push_back(new_task);
   	new_task->SetParent(this);  	
