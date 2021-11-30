@@ -42,6 +42,9 @@ int main(){
   cin>> displayInput;
   if (displayInput == "Linear"){
 cout << "Task List (Linear Sort)" << endl << endl;
+cout<<"Title: "<<TaskListTitle<<endl; 
+cout<<"Description: "<<TaskListDescrip<<endl<<endl; 
+cout<<"Sorted Subtasks: "<<endl;
    Classification* sort1 =new Linear();
 list->set_strat(sort1);
 list->printAll();
@@ -56,6 +59,9 @@ else if(displayInput == "Magnitude"){
  cout << endl << "Work Priority: ";
  cin >> WorkRank;
  cout << endl << endl << "Task List (Magnitude Sort)" << endl << endl;
+cout<<"Title: "<<TaskListTitle<<endl;
+cout<<"Description: "<<TaskListDescrip<<endl<<endl;
+cout<<"Sorted Subtasks: "<<endl;
  Classification* sort1 = new Magnitude(SchoolRank,PersonalRank,WorkRank);
  list->set_strat(sort1);
  list->printAll(); 
@@ -71,6 +77,9 @@ else if (displayInput == "Group"){
  cout << endl << "Work Priority: ";
  cin >> WorkRank;
  cout << endl << endl << "Task List (Group Sort)" << endl << endl;
+cout<<"Title: "<<TaskListTitle<<endl;
+cout<<"Description: "<<TaskListDescrip<<endl<<endl;
+cout<<"Sorted Subtasks: "<<endl;
  Classification* sort1 = new Group(SchoolRank,PersonalRank,WorkRank);
  list->set_strat(sort1);
  list->printAll();

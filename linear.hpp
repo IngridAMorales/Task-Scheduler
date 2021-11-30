@@ -15,6 +15,7 @@ class Linear : public Classification{
 
         //need a  way to check whether tasks in subtask vector 
         virtual void display(std::vector<Tasklist*> &subtasks ){
+	std::cout <<"Subtasks size: "<< subtasks.size()<< "\n\n";
             for(int i = 0; i<subtasks.size()-1; i++){
                 int max = i;
                 for(int j = i+1; j<subtasks.size(); j++){
