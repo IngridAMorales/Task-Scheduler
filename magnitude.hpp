@@ -41,10 +41,6 @@ class Magnitude : public Classification{
             for(int i = 0; i<subtasks.size(); i++)
                 subtasks[i]->print();
             std::cout << "\n\n";
-/*
-            for(int i = 0; i<subtasks.size(); i++)
-                delete subtasks[i];
-        */
 	}
  
 };
