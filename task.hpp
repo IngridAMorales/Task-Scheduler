@@ -3,7 +3,7 @@
 #include "tasklist.hpp" 
 #include <vector>
 #include <algorithm>
-
+#include "classification.hpp"
 class Tasks: public Tasklist {
 private:
    Classification* sort = nullptr; 
@@ -15,6 +15,7 @@ private:
    std::vector<std::string> current_task;
    std::vector<std::string> data;  
    std::vector<Tasklist*> subtasks;
+   
 public: 
    Tasks(const std::string &t, const std::string &d, int p, const std::string &c): title(t), descrip(d), priority(p), classif(c){} 
    
@@ -29,7 +30,7 @@ public:
 
    virtual void add_task(Tasklist* new_task){	//adds composite tasks and subtasks 
  	subtasks.push_back(new_task);
-  	new_task->SetParent(this);  	
+  	//new_task->SetParent(this);  	
     }
     virtual void delete_task(Tasklist* task) { 
 	subtasks.erase(std::remove(subtasks.begin(), subtasks.end(), task), subtasks.end());
