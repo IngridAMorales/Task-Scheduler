@@ -41,7 +41,7 @@ int main(){
    cout << "How would you like to display your Tasks?(Linear,Magnitude,Group)" << endl;
   cin>> displayInput;
   if (displayInput == "Linear"){
-cout << "Task List (Group Sort)" << endl << endl;
+cout << "Task List (Linear Sort)" << endl << endl;
    Classification* sort1 =new Linear();
 list->set_strat(sort1);
 list->printAll();
@@ -95,7 +95,7 @@ else if (userInput == "add"){
    cin.ignore();
   Tasks* task = new Tasks(TaskTitle, TaskDescrip,TaskPrior,TaskClass);
    list->add_task(task);
-   cout << "Would you like to create subtasks?(yes/no)" << endl << endl;
+   cout << endl << "Would you like to create subtasks?(yes/no)" << endl << endl;
    cin >> subtasksOption;
    cin.ignore();
 

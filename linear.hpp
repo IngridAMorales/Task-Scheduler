@@ -29,7 +29,7 @@ public:
             for(int i = 0; i<subtasks.size(); i++){
                 subtasks[i]->print();
 		
-            std::cout << "\n\n";}
+            }
         }
 };
 
