@@ -11,6 +11,7 @@
 
 using namespace std;
 
+void PrintMenu();
 
 int main(){
    string userInput = "menu";
@@ -27,8 +28,6 @@ int main(){
   int TaskPrior;
   int SubTaskPrior;
   int TaskListPrior;
-  Tasks* task;
-  Tasklist* subtask;
 
    cout << "Welcome to the Task List Scheduler! " << endl << endl;
    cout << "Let's Name Your Task List!" << endl << endl;
@@ -46,17 +45,32 @@ int main(){
   
  while (userInput != "quit"){
     if (userInput == "display"){
-   cout << "Task List" << endl << endl;
- 
-/*    vector<string> taskList = list->get_data();
-    for (int i =0;i<taskList.size();++i){
-     cout << taskList.at(i) << endl;
-}*/
-
-Classification* sort1 =new Linear();
+    string displayInput;
+   cout << "How would you like to display your Tasks?(Linear,Magnitude,Group)" << endl;
+  cin>> displayInput;
+  if (displayInput == "Linear"){
+cout << "Task List" << endl << endl;
+   Classification* sort1 =new Linear();
 list->set_strat(sort1);
 list->printAll();
-
+}
+else if(displayInput == "Magnitude"){
+  int SchoolRank,PersonalRank,WorkRank;
+  cout << "Please rank each classification: (1 = Low Priority, 2 = Medium Priority, 3 = High Priority)" << endl;
+ cout << "School Priority: " << endl;
+ cin >> SchoolRank;
+ cout << endl << "Personal Priority: ";
+ cin >> PersonalRank;
+ cout << endl << "Work Priority: ";
+ cin >> WorkRank;
+ cout << endl << endl << "Task List (Magnitude Sort)" << endl << endl;
+ Classification* sort1 = new Magnitude(SchoolRank,PersonalRank,WorkRank);
+ list->set_strat(sort1);
+ list->printAll(); 
+}
+else{
+ cout << "Group" << endl;
+}
 }
 
 else if (userInput == "add"){
@@ -72,7 +86,7 @@ else if (userInput == "add"){
    cout << "Input Priority Level:" << endl;
    cin>> TaskPrior;
    cin.ignore();
-   task = new Tasks(TaskTitle, TaskDescrip,TaskPrior,TaskClass);
+  Tasks* task = new Tasks(TaskTitle, TaskDescrip,TaskPrior,TaskClass);
    list->add_task(task);
    cout << "Would you like to create subtasks?" << endl << endl;
    cin >> subtasksOption;
@@ -91,9 +105,9 @@ else if (userInput == "add"){
    	cout << "Input Priority Level:" << endl;
    	cin>> SubTaskPrior;
    	cin.ignore();
-    subtask = new Subtask(SubTaskTitle,SubTaskDescrip,SubTaskPrior,SubTaskClass);
+ Tasklist* subtask = new Subtask(SubTaskTitle,SubTaskDescrip,SubTaskPrior,SubTaskClass);
    //list->add_task(new Subtask(SubTaskTitle,SubTaskDescrip,SubTaskPrior,SubTaskClass));
-   list->add(subtask);
+   list->add_task(subtask);
    cout << "Subtask added!" << endl << endl;
 
    cout << "Would you like to create subtasks?" << endl << endl;
@@ -102,45 +116,52 @@ else if (userInput == "add"){
 }
 } 
 else if (userInput == "delete"){
-  cout << "Delete Task" << endl;
-
+  string deleteTask;
+  cout << "What is the title of the task you would like to delete?" << endl;
+  getline(cin,deleteTask);
+ // vector<Tasklist*> copy = list->get_Subtasks();
+  for (int i=0;i<list->get_Subtasks().size();++i){
+  if (list->get_Subtasks().at(i)->get_title() == deleteTask){
+   list->delete_task(list->get_Subtasks().at(i));
+   }
+}
 }
 else if (userInput == "edit"){
   string editTask;
   cout << "What is the title of the task you would like to edit?" << endl;
   getline(cin,editTask);
-  task->edit_title(subtask,"VIVIANE");
+  //vector<Tasklist*> copy = list->get_Subtasks();
+  for (int i=0;i<list->get_Subtasks().size();++i){
+  if (list->get_Subtasks().at(i)->get_title() == editTask){
+   list->edit_title(list->get_Subtasks().at(i),"InputString");
+   }
+  }
 }
 else if (userInput == "menu"){
-  cout << "MAIN MENU" << endl;
-    cout << "display - Display all tasks" << endl;
-    cout << "add     - Add new task" << endl;
-    cout << "delete  - Delete task" << endl;
-    cout << "edit    - Edit task" << endl;
-    cout << "quit    - Quit the program" << endl << endl;
+  PrintMenu();
 }
 else{
  cout << "Not a valid option!" << endl << endl;
- cout << "MAIN MENU" << endl;
-    cout << "display - Display all tasks" << endl;
-    cout << "add     - Add new task" << endl;
-    cout << "delete  - Delete task" << endl;
-    cout << "edit    - Edit task" << endl;
-    cout << "quit    - Quit the program" << endl << endl;
+ PrintMenu();
 }
   
     cout << "Enter your selection now (menu - Main Menu): " << endl;
     cin >> userInput;
     cin.ignore();
     cout << endl;
-
 }
-delete task;
 delete list;
-delete subtask;
-delete sort1;
 cout << "Goodbye!" << endl;
 
 
 return 0;
+}
+
+void PrintMenu(){
+    cout << "MAIN MENU" << endl;
+    cout << "display - Display all tasks" << endl;
+    cout << "add     - Add new task" << endl;
+    cout << "delete  - Delete task" << endl;
+    cout << "edit    - Edit task" << endl;
+    cout << "quit    - Quit the program" << endl << endl;
 }

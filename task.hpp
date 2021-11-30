@@ -1,6 +1,7 @@
 #ifndef __TASK_HPP__
 #define __TASK_HPP__
 #include "tasklist.hpp" 
+#include "classification.hpp"
 #include <vector>
 #include <algorithm>
 
@@ -95,6 +96,9 @@ public:
   std::string get_Classif(){
     return classif;
   }
+  std::string get_title(){
+   return title;
+}
 
   void print(){
     std::cout << "Title: " << title << "\n";

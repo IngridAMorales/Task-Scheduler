@@ -29,6 +29,9 @@ public:
    int get_Priority(){
     return priority;
   }
+  std::string get_title(){
+   return title;
+}
    std::string get_Classif(){
     return classif;
   }

@@ -8,14 +8,14 @@
 #include <vector>
 #include <string>
 
-class Linear : public Classification{
-    public:
+class Linear : public Classification{    
+public:
         Linear(){}
         virtual ~Linear(){}
 
         //need a  way to check whether tasks in subtask vector 
         virtual void display(std::vector<Tasklist*> &subtasks ){
-          std::cout<<"Subtasks size: "<< subtasks.size()<<std::endl; 
+          //std::cout<<"Subtasks size: "<< subtasks.size()<<std::endl << std::endl;
             for(int i = 0; i<subtasks.size()-1; i++){
                 int min = i;
                 for(int j = i+1; j<subtasks.size(); j++){
@@ -26,11 +26,11 @@ class Linear : public Classification{
                 subtasks[min] = subtasks[i];
                 subtasks[i] = temp;
             }
-	    
-            for(int i = 0; i<subtasks.size(); i++)
+	        
+            for(int i = 0; i<subtasks.size(); i++){
                 subtasks[i]->print();
+		}
         }
-    
 };
 
 #endif 
