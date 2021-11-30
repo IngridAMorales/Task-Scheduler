@@ -116,6 +116,7 @@ TEST(Linear, DisplayFunction){
     compare.push_back(task);
 
     EXPECT_EQ(test->get_Subtasks(), compare);
+	delete test;
 
 }
 int main(int argc, char **argv) {

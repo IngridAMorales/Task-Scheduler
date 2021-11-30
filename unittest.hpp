@@ -26,6 +26,8 @@ TEST(Magnitude, Display) {
 	compare.push_back(subtask2);
 
 	EXPECT_EQ(test->get_Subtasks(), compare);
+	
+	delete test;
 
 }
 
@@ -48,6 +50,9 @@ TEST(Group, Display) {
         compare.push_back(subtask1);
 
         EXPECT_EQ(test->get_Subtasks(), compare);
+	
+	delete test;
+
 }
 
 
