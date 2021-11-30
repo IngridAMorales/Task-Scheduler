@@ -4,6 +4,7 @@
 #include "classification.hpp"
 #include "linear.hpp"
 #include "magnitude.hpp"
+#include "group.hpp"
 
 #include <iostream>
 #include <string>
@@ -49,7 +50,7 @@ int main(){
    cout << "How would you like to display your Tasks?(Linear,Magnitude,Group)" << endl;
   cin>> displayInput;
   if (displayInput == "Linear"){
-cout << "Task List" << endl << endl;
+cout << "Task List (Group Sort)" << endl << endl;
    Classification* sort1 =new Linear();
 list->set_strat(sort1);
 list->printAll();
@@ -68,8 +69,23 @@ else if(displayInput == "Magnitude"){
  list->set_strat(sort1);
  list->printAll(); 
 }
-else{
+else if (displayInput == "Group"){
  cout << "Group" << endl;
+ int SchoolRank,PersonalRank,WorkRank;
+  cout << "Please rank each classification: (1 = Low Priority, 2 = Medium Priority, 3 = High Priority)" << endl;
+ cout << "School Priority: ";
+ cin >> SchoolRank;
+ cout << endl << "Personal Priority: ";
+ cin >> PersonalRank;
+ cout << endl << "Work Priority: ";
+ cin >> WorkRank;
+ cout << endl << endl << "Task List (Group Sort)" << endl << endl;
+ Classification* sort1 = new Group(SchoolRank,PersonalRank,WorkRank);
+ list->set_strat(sort1);
+ list->printAll();
+}
+else{
+  cout << "Not a valid display output! Try again" << endl;
 }
 }
 
@@ -82,7 +98,7 @@ else if (userInput == "add"){
    cout << "Input Task Classification (School,Work, or Personal): " << endl;
    cin >> TaskClass;
    cin.ignore();
-   cout << "1 - High Priority, 2 - Medium Priority, 3 - Low Priority" << endl;
+   cout << "3 - High Priority, 2 - Medium Priority, 1 - Low Priority" << endl;
    cout << "Input Priority Level:" << endl;
    cin>> TaskPrior;
    cin.ignore();
@@ -101,7 +117,7 @@ else if (userInput == "add"){
      cout << "Input SubTask Classification (School,Work, or Personal): " << endl;
    	cin >> SubTaskClass;
    	cin.ignore();
-   cout << "1 - High Priority, 2 - Medium Priority, 3 - Low Priority" << endl;
+   cout << "3 - High Priority, 2 - Medium Priority, 1 - Low Priority" << endl;
    	cout << "Input Priority Level:" << endl;
    	cin>> SubTaskPrior;
    	cin.ignore();
