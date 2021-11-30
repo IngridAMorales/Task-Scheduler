@@ -29,12 +29,14 @@ public:
    std::string get_Classif(){
     return classif;
   }
+
   void print(){
     std::cout << "Title: " << title << "\n";
     std::cout << "Description: " << descrip << "\n";
     std::cout << "Priority: " << priority << "\n";
     std::cout << "Classification: " << classif << "\n\n";
   } 
+
 };
 
 
